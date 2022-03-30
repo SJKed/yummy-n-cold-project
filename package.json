@@ -1,0 +1,27 @@
+{
+  "name": "yummy-n-cold-project",
+  "version": "1.0.0",
+  "description": "# Beskrivning Cold n Yummy™ vill ha en kampanjsida för framröstning av en ny glassmak. Användare väljer en smak och skickar med sitt namn och e-mail-adress för att rösta på den. Man ska även kunna se topplistan på de mest populära smakerna.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SJKed/yummy-n-cold-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SJKed/yummy-n-cold-project/issues"
+  },
+  "homepage": "https://github.com/SJKed/yummy-n-cold-project#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "sequelize": "^6.17.0"
+  }
+}
