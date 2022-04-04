@@ -54,12 +54,34 @@ app.post('/register', async (req, res) => {
     const user_name = req.body.username;
     const email = req.body.email;
     let password = req.body.password;
-    const salt = await bcrypt.genSalt(10);
-    password = await bcrypt.hash(password, salt);
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(password, salt);
+    password = hash;
 
     await db.query(`INSERT INTO users (user_name, email, password) VALUES ('${user_name}', '${email}', '${password}')`);
     res.redirect('/');
 })
+
+app.get('/login', (req, res) => {
+    res.render('login');
+})
+app.post('/login', async (req, res) => {
+    const user_name = req.body.username;
+    let password = req.body.password;
+    const targetUser = await db.query(`SELECT * FROM users WHERE user_name = '${user_name}'`, { type: Sequelize.QueryTypes.SELECT });
+    const hash = targetUser[0].password;
+    const isMatch = bcrypt.compareSync(password, hash);
+    if (isMatch) {
+        console.log('Password is correct');
+        res.redirect('/');
+    }
+    else {
+        console.log('Password did not match');
+        res.redirect('/login');
+    }
+})
+
+
 
 app.listen(8080, () => {
     console.log('Server started on port 8080');
