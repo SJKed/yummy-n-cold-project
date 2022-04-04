@@ -21,6 +21,8 @@ module.exports = (sequelize) => {
         {
             sequelize,
             modelName: 'Users',
+            createdAt: false,
+            updatedAt: false
         }
     )
 
