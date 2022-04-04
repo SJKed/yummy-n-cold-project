@@ -1,7 +1,8 @@
 const express = require('express');
-const app = express();
 const Sequelize = require('sequelize');
 const bcrypt = require('bcryptjs');
+
+const app = express();
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +23,7 @@ app.post('/vote', async (req, res) => {
     const yums = await db.query(`SELECT yum FROM flavours WHERE flavour_name = '${flavour}'`, { type: Sequelize.QueryTypes.SELECT });
     const newYum = yums[0].yum + 1;
 
-    await db.query(`INSERT INTO users (user_name, email) VALUES ('${user_name}', '${email}')`);
+    await db.query(`INSERT INTO users (user_name, email, password) VALUES ('${user_name}', '${email}', 'password')`);
     await db.query(`UPDATE flavours SET yum = ${newYum} WHERE flavour_name = '${flavour}'`);
     res.redirect('/');
 })
