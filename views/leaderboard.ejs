@@ -10,18 +10,26 @@
 </head>
 
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/addaflavour">Suggest a flavour!</a>
-        <a href="/leaderboard">Top Flavours</a>
-    </nav>
-    <ul>
-        <% for (let i=0; i < flavours.length; i++) { %>
-            <li>
-                <%=flavours[i].flavour_name%> has <%=flavours[i].yum%> 😋 YUMS!
-            </li>
-            <% } %>
-    </ul>
+    <div class="wrapper">
+        <div class="topimage"></div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/addaflavour">Suggest a flavour!</a>
+            <a href="/leaderboard">Top Flavours</a>
+        </nav>
+
+        <div class="leaderboard">
+            <h1>Most liked flavours!</h1>
+            <ul>
+                <% for (let i=0; i < flavours.length; i++) { %>
+                    <li>
+                        <%=flavours[i].flavour_name%> has <%=flavours[i].yum%> 😋 YUMS!
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+
+    </div>
 </body>
 
 </html>

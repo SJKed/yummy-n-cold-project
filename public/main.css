@@ -1,82 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
 body {
-    background-color: aliceblue;
-    margin: 0;
-    padding: 0;
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+  font-family: Fredoka One, sans-serif;
 }
 
-nav{
-    background-color: peachpuff;
-    color: white;
-    padding: 10px;
-    margin: 0;
+.wrapper {
+  max-width: 1440px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.topimage {
+  background-image: url("./assets/yummy.png");
+  background-size: cover;
+  height: 297px;
+  background-repeat: no-repeat;
+}
+
+nav {
+  background-color: peachpuff;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav > a {
+  text-decoration: none;
+  color: #a85cff;
+  font-size: 20px;
+  transition: 200ms;
+}
+nav > a:hover {
+  color: #dab9ff;
 }
 
 .poll {
-    width: 400px;
-    height: auto;
-    margin: auto;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px #000;
-    display: flex;
-
+  width: 400px;
+  height: auto;
+  margin: auto;
+  background-color: peachpuff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px #000;
+  display: flex;
+  margin-top: 2.5%;
 }
 
 .pollbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 400px;
-    height: 100px;
-    background-color: peachpuff;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 400px;
+  height: 100px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 20px;
+  grid-column: 1;
+  justify-self: center;
 }
 
 .vote {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    margin-right: 10px;
+  grid-column: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-self: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  width: 1.25rem;
+  height: 1.25rem;
+  transform: translateY(-0.075em);
 }
 
 .login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
 .username {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .email {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 button {
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #fff;
-    border: 1px solid #000;
-    margin-top: 10px;
-    transition: 0.3s;
-    cursor: pointer;
-    justify-self: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  margin-top: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  justify-self: center;
 }
 button:hover {
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
 }
