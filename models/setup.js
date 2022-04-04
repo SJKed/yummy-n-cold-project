@@ -26,8 +26,4 @@ Flavours.sync().then(() => {
 
 Users.sync().then(() => {
     console.log('Users table created');
-    Users.create({
-        user_name: 'John',
-        email: 'ihate@sequelize.com',
-    });
 });
