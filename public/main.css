@@ -1,0 +1,82 @@
+body {
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: peachpuff;
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+.poll {
+    width: 400px;
+    height: auto;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px #000;
+    display: flex;
+
+}
+
+.pollbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    height: 100px;
+    background-color: peachpuff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.vote {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 10px;
+}
+.username {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.email {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+button {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    margin-top: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    justify-self: center;
+}
+button:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}

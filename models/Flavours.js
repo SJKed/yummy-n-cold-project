@@ -17,14 +17,6 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        yuk: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        totalVotes: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
     },
         {
             sequelize,
@@ -34,4 +26,3 @@ module.exports = (sequelize) => {
 
     return Flavours;
 }
-

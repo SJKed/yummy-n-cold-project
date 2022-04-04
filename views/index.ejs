@@ -5,13 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Index EJS</h1>
-    <h1>
-    </h1>
+    <!--Write out all flavours-->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/addaflavour">Suggest a flavour!</a>
+        <a href="/leaderboard">Top Flavours</a>
+    </nav>
+    <div class="poll">
+        <form action="/vote" method="post">
+            <% for (let i=0; i < flavours.length; i++) { %>
+                <div class="pollbox">
+                    <p class="name">
+                        <%=flavours[i].flavour_name%>
+                    </p>
+                    <div class="vote">
+                        <input type="radio" name="radioinput" value="<%=flavours[i].flavour_name%>" id="yumradio">
+                        <p class="yum">😋 YUM!</p>
+                    </div>
+                </div>
+                <% } %>
+                    <div class="login">
+                        <div class="username">
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" id="username">
+                        </div>
+                        <div class="email">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+                    </div>
+                    <button>VOTE!</button>
+        </form>
+    </div>
 </body>
 
 </html>
