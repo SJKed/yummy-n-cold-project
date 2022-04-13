@@ -26,7 +26,8 @@ app.get('/leaderboard', async (req, res) => {
     const flavours = await Flavour.findAll({
         order: [['yum', 'DESC']],
         //sequelize.op.gt == operator.greaterThan https://sequelize.org/docs/v6/core-concepts/model-querying-basics/#operators
-        where: { yum: { [Sequelize.Op.gt]: 0 } }
+        where: { yum: { [Sequelize.Op.gt]: 0 } },
+        limit: 10
     });
     res.render('leaderboard', { flavours });
 })
