@@ -1,10 +1,11 @@
 const { DataTypes, Model } = require('sequelize');
 
-class Users extends Model { }
 
-module.exports = (sequelize) => {
+module.exports = database => {
+    class Users extends Model { }
+
     Users.init({
-        user_id: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -23,7 +24,7 @@ module.exports = (sequelize) => {
         }
     },
         {
-            sequelize,
+            sequelize: database,
             modelName: 'Users',
             createdAt: false,
             updatedAt: false

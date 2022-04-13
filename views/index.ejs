@@ -12,45 +12,38 @@
 <body>
     <!--Write out all flavours-->
     <div class="wrapper">
-        <div class="topimage"></div>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/addaflavour">Suggest a flavour!</a>
-            <a href="/leaderboard">Top Flavours</a>
-            <a href="/register">Register</a>
-            <a href="/login">Login</a>
-        </nav>
+        <%- include('./partials/header') -%>
 
-        <div class="poll">
-            <form action="/vote" method="post">
-                <h3>What's your favourite flavour?</h3>
-                <div class="optionsContainer">
-                    <% for (let i=0; i < flavours.length; i++) { %>
-                        <div class="pollbox">
-                            <p class="name">
-                                <%=flavours[i].flavour_name%>
-                            </p>
-                            <div class="vote">
-                                <input type="radio" name="radioinput" value="<%=flavours[i].flavour_name%>"
-                                    id="yumradio">
-                                <p class="yum">😋 YUM!</p>
+            <div class="poll">
+                <form action="/vote" method="post">
+                    <h3>What's your favourite flavour?</h3>
+                    <div class="optionsContainer">
+                        <% for (let i=0; i < flavours.length; i++) { %>
+                            <div class="pollbox">
+                                <p class="name">
+                                    <%=flavours[i].flavour_name%>
+                                </p>
+                                <div class="vote">
+                                    <input type="radio" name="radioinput" value="<%=flavours[i].flavour_name%>"
+                                        id="yumradio">
+                                    <p class="yum">😋 YUM!</p>
+                                </div>
                             </div>
+                            <% } %>
+                    </div>
+                    <div class="anonLogin">
+                        <div class="username">
+                            <label for="username">Name:</label>
+                            <input type="text" name="username" id="username" required>
                         </div>
-                        <% } %>
-                </div>
-                <div class="anonLogin">
-                    <div class="username">
-                        <label for="username">Name:</label>
-                        <input type="text" name="username" id="username" required>
+                        <div class="email">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" id="email" required>
+                        </div>
                     </div>
-                    <div class="email">
-                        <label for="email">Email:</label>
-                        <input type="text" name="email" id="email" required>
-                    </div>
-                </div>
-                <button>VOTE!</button>
-            </form>
-        </div>
+                    <button>VOTE!</button>
+                </form>
+            </div>
     </div>
 </body>
 
